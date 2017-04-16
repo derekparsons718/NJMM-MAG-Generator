@@ -1,2 +1,2 @@
 # NJMM-MAG-Generator
-Creates a "Mission At a Glance" spreadsheet.
+The MAG Generator is a Google Apps Script program that creates a "Mission At a Glance" (MAG) spreadsheet report using two spreadsheets uploaded from IMOS. This report is specific to the New Jersey Morristown Mission of the Church of Jesus Christ of Latter-day Saints. It is a two-page report containing condensed organizational information. It is intended to be printed for the use of Senior Missionaries, and is also used by mission leadership as a quick reference.
