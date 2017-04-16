@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+  
+    <script>
+      function respond() {
+        var formData = document.getElementById("selectFilesForm");
+        google.script.run.generateMag(formData);
+        google.script.host.close();
+      }
+    </script>
+  
+    <?var fileList = getFileList(0);?>
+    
+    <form id='selectFilesForm'>
+      <table style="width:100%" cellpadding="20">
+        <col width="400">
+        <col width="400">
+        <tr>
+          <th> Select the current Organization Roster </th>
+          <th> Select the Vehicle Assignments file </th>
+        </tr>
+        <tr>
+        
+          <td valign="top">
+            <? for (i=0; i<fileList.length; i++) { ?>
+              <input type='radio' name='organizationRoster' value='<?=fileList[i]?>'> <?=fileList[i]?> <br>
+            <?}?>
+          </td>
+          
+          
+          <td valign="top"> 
+            <? for (i=0; i<fileList.length; i++) { ?>
+              <input type='radio' name='vehicleAssignments' value='<?=fileList[i]?>'> <?=fileList[i]?> <br>
+            <?}?>
+          </td>
+          
+          
+      </table> <br><br><br><br>
+      <center>
+        <input type="checkbox" name="trash" value="true">Delete the files afterwards? (recommended) <br><br><br><br><br>
+        <input type="button" onclick="respond()" value="Generate MAG">
+      </center>
+    </form>
+  </body>
+</html>
